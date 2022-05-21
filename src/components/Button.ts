@@ -1,3 +1,4 @@
+// @ts-ignore
 import shader from 'shader';
 import styled from 'styled-components';
 import { Theme } from '../styles';
