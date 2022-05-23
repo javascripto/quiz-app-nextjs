@@ -1,3 +1,4 @@
+import { EventHandler, KeyboardEvent } from 'react';
 import styled from 'styled-components';
 
 const AlternativeContainer = styled.div`
@@ -23,10 +24,22 @@ Radio.defaultProps = {
 };
 
 export function Alternative({ onClick, children, value }: any) {
+  function handleKeyPress(event: React.KeyboardEvent) {
+    const label = event.target as any;
+    if (event.key === 'ArrowRight') {
+      label.parentElement.nextSibling?.children[1].focus();
+    } else if (event.key === 'ArrowLeft') {
+      label.parentElement.previousSibling?.children[1].focus();
+    } else if (event.key === ' ' || event.key === 'Enter') {
+      label.click();
+    }
+  }
   return (
     <AlternativeContainer onClick={() => onClick(value)}>
       <Radio name="alternative" id={value} value={value} />
-      <Label htmlFor={value}>{children}</Label>
+      <Label tabIndex={1} htmlFor={value} onKeyDown={handleKeyPress}>
+        {children}
+      </Label>
     </AlternativeContainer>
   );
 }
