@@ -3,9 +3,6 @@ import shader from 'shader';
 import styled from 'styled-components';
 import { Theme } from '../styles';
 
-const capitalize = (text: string) =>
-  text.charAt(0).toUpperCase() + text.substring(1);
-
 export const Button = styled.button<ButtonProps>`
   cursor: pointer;
   padding: 8px;
