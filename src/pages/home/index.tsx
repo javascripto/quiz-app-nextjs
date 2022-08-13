@@ -13,7 +13,7 @@ export default function Home() {
       <Card centerContent>
         <Typography variant="title">Quiz App</Typography>
         <Typography variant="subtitle" color="gray">
-          You're ready to start?
+          Are you ready to start?
         </Typography>
         <Typography>It's gonna take just a few minutes</Typography>
         <Link href="quiz">
